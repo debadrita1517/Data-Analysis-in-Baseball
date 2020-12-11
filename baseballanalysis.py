@@ -29,7 +29,6 @@ def assign_x_coord(row):
         return 2
     if row.zone in [3, 6, 9]:
         return 3
-
 def assign_y_coord(row):
     if row.zone in [1, 2, 3]:
         return 3
@@ -44,7 +43,7 @@ plt.hist2d(judge_strike_hr['zone_x'], judge_strike_hr['zone_y'], bins = 3, cmap=
 plt.title('Aaron Judge Home Runs on\n Pitches in the Strike Zone, 2015-2017')
 plt.gca().get_xaxis().set_visible(False)
 plt.gca().get_yaxis().set_visible(False)
-cb = plt.colorbar()
+cb=plt.colorbar()
 cb.set_label('Counts in Bin')
 stanton_strike_hr = stanton_hr.copy().loc[stanton_hr.zone <= 9]
 stanton_strike_hr['zone_x'] = stanton_strike_hr.apply(assign_x_coord, axis=1)
@@ -53,6 +52,6 @@ plt.hist2d(stanton_strike_hr['zone_x'], stanton_strike_hr['zone_y'], bins = 3, c
 plt.title('Giancarlo Stanton Home Runs on\n Pitches in the Strike Zone, 2015-2017')
 plt.gca().get_xaxis().set_visible(False)
 plt.gca().get_yaxis().set_visible(False)
-cb = plt.colorbar()
+cb=plt.colorbar()
 cb.set_label('Counts in Bin')
-should_pitchers_be_scared = True
+should_pitchers_be_scared=True
